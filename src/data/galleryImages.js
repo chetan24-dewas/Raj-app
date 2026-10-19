@@ -8,6 +8,7 @@ export const galleryCategories = [
   "Wardrobe",
   "Pooja Mandir Cabinet",
   "Upholstered Bed Headboard",
+  "dining table",
 ];
 
 export const galleryImages = [
@@ -25,6 +26,7 @@ export const galleryImages = [
   { id: "bed-03", category: "Bed", src: "/gallery/bed-03.jpg", alt: "Bed design 3", caption: "Bed" },
   { id: "bed-04", category: "Bed", src: "/gallery/bed-04.jpg", alt: "Bed design 4", caption: "Bed" },
   { id: "bed-05", category: "Bed", src: "/gallery/bed-05.jpg", alt: "Bed design 5", caption: "Bed" },
+  { id: "bed-06", category: "Bed", src: "/gallery/bed-06.jpg", alt: "Bed design 6", caption: "Bed" },
 
   // Sofa
   { id: "sofa-01", category: "Sofa", src: "/gallery/sofa-01.jpg", alt: "Sofa design 1", caption: "Sofa" },
@@ -56,6 +58,7 @@ export const galleryImages = [
   { id: "wardrobe-03", category: "Wardrobe", src: "/gallery/wardrobe-03.jpg", alt: "Wardrobe design 3", caption: "Wardrobe" },
   { id: "wardrobe-04", category: "Wardrobe", src: "/gallery/wardrobe-04.jpg", alt: "Wardrobe design 4", caption: "Wardrobe" },
   { id: "wardrobe-05", category: "Wardrobe", src: "/gallery/wardrobe-05.jpg", alt: "Wardrobe design 5", caption: "Wardrobe" },
+  
 
   // Pooja Mandir Cabinet
   { id: "pooja-mandir-01", category: "Pooja Mandir Cabinet", src: "/gallery/pooja-mandir-01.jpg", alt: "Pooja mandir cabinet design 1", caption: "Pooja Mandir Cabinet" },
@@ -76,4 +79,16 @@ export const galleryImages = [
   { id: "headboard-03", category: "Upholstered Bed Headboard", src: "/gallery/headboard-03.jpg", alt: "Upholstered bed headboard design 3", caption: "Upholstered Bed Headboard" },
   { id: "headboard-04", category: "Upholstered Bed Headboard", src: "/gallery/headboard-04.jpg", alt: "Upholstered bed headboard design 4", caption: "Upholstered Bed Headboard" },
   { id: "headboard-05", category: "Upholstered Bed Headboard", src: "/gallery/headboard-05.jpg", alt: "Upholstered bed headboard design 5", caption: "Upholstered Bed Headboard" },
+
+  // Dining Table
+  { id: "dining-table-01", category: "dining table", src: "/gallery/dining-table-01.jpg", alt: "Dining table design 1", caption: "Dining Table" },
+  { id: "dining-table-02", category: "dining table", src: "/gallery/dining-table-02.jpg", alt: "Dining table design 2", caption: "Dining Table" },
+  { id: "dining-table-03", category: "dining table", src: "/gallery/dining-table-03.jpg", alt: "Dining table design 3", caption: "Dining Table" },
+  { id: "dining-table-04", category: "dining table", src: "/gallery/dining-table-04.jpg", alt: "Dining table design 4", caption: "Dining Table" },
+  { id: "dining-table-05", category: "dining table", src: "/gallery/dining-table-05.jpg", alt: "Dining table design 5", caption: "Dining Table" },
+  { id: "dining-table-06", category: "dining table", src: "/gallery/dining-table-06.jpg", alt: "Dining table design 6", caption: "Dining Table" },
+  { id: "dining-table-07", category: "dining table", src: "/gallery/dining-table-07.jpg", alt: "Dining table design 7", caption: "Dining Table" },
+  { id: "dining-table-08", category: "dining table", src: "/gallery/dining-table-08.jpg", alt: "Dining table design 8", caption: "Dining Table" },
+  { id: "dining-table-09", category: "dining table", src: "/gallery/dining-table-09.jpg", alt: "Dining table design 9", caption: "Dining Table" },
+
 ];
