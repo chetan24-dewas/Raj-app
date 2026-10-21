@@ -8,6 +8,79 @@ const ENTER_MS = 200;
 // Replace with your WhatsApp number: country code + number, digits only (no + or spaces)
 const WHATSAPP_NUMBER = "919406654752";
 
+// Har category ka ek video. Files: public/videos/<naam>.mp4
+// "category" ka naam galleryImages.js wali category se bilkul same hona chahiye.
+const galleryVideos = [
+  { id: "tea-table-video", category: "Tea Table", src: "/videos/tea-table.mp4", title: "Tea Table Designs" },
+  { id: "bed-video", category: "Bed", src: "/videos/bed.mp4", title: "Bed Designs" },
+  { id: "sofa-video", category: "Sofa", src: "/videos/sofa.mp4", title: "Sofa Designs" },
+  { id: "tv-wall-unit-video", category: "TV Wall Unit", src: "/videos/tv-wall-unit.mp4", title: "TV Wall Unit Designs" },
+  { id: "dressing-table-video", category: "Dressing Table with LED Mirror", src: "/videos/dressing-table.mp4", title: "Dressing Table with LED Mirror" },
+  { id: "wardrobe-video", category: "Wardrobe", src: "/videos/wardrobe.mp4", title: "Wardrobe Designs" },
+  { id: "pooja-mandir-video", category: "Pooja Mandir Cabinet", src: "/videos/pooja-mandir.mp4", title: "Pooja Mandir Cabinet" },
+  { id: "headboard-video", category: "Upholstered Bed Headboard", src: "/videos/headboard.mp4", title: "Upholstered Bed Headboard" },
+  { id: "dining-table-video", category: "dining table", src: "/videos/dining-table.mp4", title: "Dining Table Designs" },
+  { id: "almirah-video", category: "Almirah", src: "/videos/almirah.mp4", title: "Almirah Designs" },
+  { id: "folding-almirah-video", category: "Folding Almirah", src: "/videos/folding-almirah.mp4", title: "Folding Almirah Designs" },
+];
+
+// Naye sections (images yahin se bante hain, galleryImages.js badalne ki zaroorat nahi).
+// Images:  public/gallery/<prefix>-01.jpg, -02.jpg ...
+// Agar images kam/zyada hain to "count" badal do.
+const extraSections = [
+  { category: "Almirah", prefix: "almirah", label: "Almirah", count: 5 },
+  { category: "Folding Almirah", prefix: "folding-almirah", label: "Folding Almirah", count: 5 },
+];
+
+// galleryImages.js me agar yeh categories pehle se hain to dobara add nahi hongi.
+const newSections = extraSections.filter(
+  (s) => !galleryCategories.includes(s.category)
+);
+
+const allCategories = [...galleryCategories, ...newSections.map((s) => s.category)];
+
+const allImages = [
+  ...galleryImages,
+  ...newSections.flatMap((s) =>
+    Array.from({ length: s.count }, (_, i) => {
+      const n = String(i + 1).padStart(2, "0");
+      return {
+        id: `${s.prefix}-${n}`,
+        category: s.category,
+        src: `/gallery/${s.prefix}-${n}.jpg`,
+        alt: `${s.label} design ${i + 1}`,
+        caption: s.label,
+      };
+    })
+  ),
+];
+
+// Images + har section ke end me uska ek video card.
+function buildItems(cat) {
+  const cats =
+    cat === "All"
+      ? allCategories.filter((c) => c !== "All")
+      : [cat];
+
+  const items = cats.flatMap((c) => {
+    const imgs = allImages
+      .filter((g) => g.category === c)
+      .map((g) => ({ ...g, kind: "image" }));
+    const vid = galleryVideos.find((v) => v.category === c);
+    return vid ? [...imgs, { ...vid, kind: "video" }] : imgs;
+  });
+
+  // "All" me koi image aisi category ki ho jo list me nahi, to woh bhi dikhao.
+  if (cat === "All") {
+    const rest = allImages
+      .filter((g) => !cats.includes(g.category))
+      .map((g) => ({ ...g, kind: "image" }));
+    return [...items, ...rest];
+  }
+
+  return items;
+}
+
 function enquiryLink(img) {
   const text = `Hello Raj Furniture, I'm interested in "${img.caption}". Please share price and details.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -16,6 +89,7 @@ function enquiryLink(img) {
 function GalleryCard({ img, phase, onOpen }) {
   const [enteredViaFilter] = useState(() => phase === "entering");
   const [seen, setSeen] = useState(enteredViaFilter);
+  const [videoError, setVideoError] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -51,6 +125,37 @@ function GalleryCard({ img, phase, onOpen }) {
     style = { opacity: 1, transform: "scale(1)", transition: "opacity 0.5s ease, transform 0.5s ease" };
   }
 
+  /* ---------- VIDEO CARD ---------- */
+  if (img.kind === "video") {
+    return (
+      <figure ref={ref} className="gallery-card" style={style}>
+        <div className="gallery-card-frame gallery-video-frame">
+          {!videoError ? (
+            <video
+              src={img.src}
+              controls
+              playsInline
+              preload="metadata"
+              className="gallery-video"
+              aria-label={img.title}
+              onError={() => setVideoError(true)}
+            >
+              Your browser does not support video playback.
+            </video>
+          ) : (
+            <div className="gallery-video-error">
+              <span aria-hidden="true" style={{ fontSize: "1.8rem" }}>▶</span>
+              <p>Video could not be loaded</p>
+              <p style={{ fontSize: "0.7rem", opacity: 0.7 }}>{img.src}</p>
+            </div>
+          )}
+          <span className="gallery-video-badge">▶ {img.title}</span>
+        </div>
+      </figure>
+    );
+  }
+
+  /* ---------- IMAGE CARD ---------- */
   return (
     <figure ref={ref} className="gallery-card" style={style}>
       <button
@@ -87,7 +192,7 @@ function GalleryCard({ img, phase, onOpen }) {
 
 export default function GalleryPage() {
   const [active, setActive] = useState("All");
-  const [displayed, setDisplayed] = useState(galleryImages);
+  const [displayed, setDisplayed] = useState(() => buildItems("All"));
   const [phase, setPhase] = useState("idle");
   const [lightboxItem, setLightboxItem] = useState(null);
   const timeoutRef = useRef(null);
@@ -99,9 +204,8 @@ export default function GalleryPage() {
     setPhase("exiting");
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
-      const next = cat === "All" ? galleryImages : galleryImages.filter((g) => g.category === cat);
       setActive(cat);
-      setDisplayed(next);
+      setDisplayed(buildItems(cat));
       setPhase("entering");
       requestAnimationFrame(() => {
         requestAnimationFrame(() => setPhase("idle"));
@@ -125,7 +229,7 @@ export default function GalleryPage() {
         </div>
 
         <div className="flex flex-wrap gap-3 mb-10 gallery-fade-up" style={{ animationDelay: "80ms" }}>
-          {galleryCategories.map((cat) => {
+          {allCategories.map((cat) => {
             const isActive = active === cat;
             return (
               <button
@@ -194,6 +298,50 @@ export default function GalleryPage() {
         .gallery-card:hover .gallery-card-img,
         .gallery-card-frame:focus-visible .gallery-card-img {
           transform: scale(1.06);
+        }
+
+        /* ---- Video card ---- */
+        .gallery-video-frame {
+          cursor: default;
+          background: #171411;
+        }
+        .gallery-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          background: #171411;
+        }
+        .gallery-video-badge {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          max-width: calc(100% - 20px);
+          padding: 5px 10px;
+          border-radius: 999px;
+          background: rgba(24, 20, 16, 0.72);
+          color: #fbf6ee;
+          font-size: 0.7rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          pointer-events: none;
+        }
+        .gallery-video-error {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 16px;
+          text-align: center;
+          color: #fbf6ee;
+          font-size: 0.85rem;
+          overflow-wrap: anywhere;
         }
 
         .gallery-card-corner {

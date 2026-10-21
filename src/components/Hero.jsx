@@ -35,7 +35,7 @@ const SLIDES = [
   },
   {
     id: "dining-table",
-    src: "/hero/03-dining-table.jpg",
+    src: "/hero/03-shopping-table.jpg",
     label: "Dining Collection",
     type: "wide",
     duration: 5500,

@@ -9,6 +9,8 @@ export const galleryCategories = [
   "Pooja Mandir Cabinet",
   "Upholstered Bed Headboard",
   "dining table",
+  "Almirah",
+  "Folding Almirah",
 ];
 
 export const galleryImages = [
@@ -37,6 +39,14 @@ export const galleryImages = [
   { id: "sofa-06", category: "Sofa", src: "/gallery/sofa-06.jpg", alt: "Sofa design 6", caption: "Sofa" },
   { id: "sofa-07", category: "Sofa", src: "/gallery/sofa-07.jpg", alt: "Sofa design 7", caption: "Sofa" },
   { id: "sofa-08", category: "Sofa", src: "/gallery/sofa-08.jpg", alt: "Sofa design 8", caption: "Sofa" },
+  { id: "sofa-09", category: "Sofa", src: "/gallery/sofa-09.jpg", alt: "Sofa design 9", caption: "Sofa" },
+  { id: "sofa-10", category: "Sofa", src: "/gallery/sofa-10.jpg", alt: "Sofa design 10", caption: "Sofa" },
+  { id: "sofa-11", category: "Sofa", src: "/gallery/sofa-11.jpg", alt: "Sofa design 11", caption: "Sofa" },
+  { id: "sofa-12", category: "Sofa", src: "/gallery/sofa-12.jpg", alt: "Sofa design 12", caption: "Sofa" },
+  { id: "sofa-13", category: "Sofa", src: "/gallery/sofa-13.jpg", alt: "Sofa design 13", caption: "Sofa" },
+  { id: "sofa-14", category: "Sofa", src: "/gallery/sofa-14.jpg", alt: "Sofa design 14", caption: "Sofa" },
+  { id: "sofa-15", category: "Sofa", src: "/gallery/sofa-15.jpg", alt: "Sofa design 15", caption: "Sofa" },
+
 
   // TV Wall Unit
   { id: "tv-wall-unit-01", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-01.jpg", alt: "TV wall unit design 1", caption: "TV Wall Unit" },
@@ -91,4 +101,38 @@ export const galleryImages = [
   { id: "dining-table-08", category: "dining table", src: "/gallery/dining-table-08.jpg", alt: "Dining table design 8", caption: "Dining Table" },
   { id: "dining-table-09", category: "dining table", src: "/gallery/dining-table-09.jpg", alt: "Dining table design 9", caption: "Dining Table" },
 
+  // Almirah
+  { id: "almirah-01", category: "Almirah", src: "/gallery/almirah-01.jpg", alt: "Almirah design 1", caption: "Almirah" },
+  { id: "almirah-02", category: "Almirah", src: "/gallery/almirah-02.jpg", alt: "Almirah design 2", caption: "Almirah" },
+  { id: "almirah-03", category: "Almirah", src: "/gallery/almirah-03.jpg", alt: "Almirah design 3", caption: "Almirah" },
+  { id: "almirah-04", category: "Almirah", src: "/gallery/almirah-04.jpg", alt: "Almirah design 4", caption: "Almirah" },
+  { id: "almirah-05", category: "Almirah", src: "/gallery/almirah-05.jpg", alt: "Almirah design 5", caption: "Almirah" },
+  { id: "almirah-06", category: "Almirah", src: "/gallery/almirah-06.jpg", alt: "Almirah design 6", caption: "Almirah" },
+  { id: "almirah-07", category: "Almirah", src: "/gallery/almirah-07.jpg", alt: "Almirah design 7", caption: "Almirah" },
+  { id: "almirah-08", category: "Almirah", src: "/gallery/almirah-08.jpg", alt: "Almirah design 8", caption: "Almirah" },
+  { id: "almirah-09", category: "Almirah", src: "/gallery/almirah-09.jpg", alt: "Almirah design 9", caption: "Almirah" },
+  { id: "almirah-10", category: "Almirah", src: "/gallery/almirah-10.jpg", alt: "Almirah design 10", caption: "Almirah" },
+  { id: "almirah-11", category: "Almirah", src: "/gallery/almirah-11.jpg", alt: "Almirah design 11", caption: "Almirah" },
+
+  // Folding Almirah
+  { id: "folding-almirah-01", category: "Folding Almirah", src: "/gallery/folding-almirah-01.jpg", alt: "Folding Almirah design 1", caption: "Folding Almirah" },
+  { id: "folding-almirah-02", category: "Folding Almirah", src: "/gallery/folding-almirah-02.jpg", alt: "Folding Almirah design 2", caption: "Folding Almirah" },
+  { id: "folding-almirah-03", category: "Folding Almirah", src: "/gallery/folding-almirah-03.jpg", alt: "Folding Almirah design 3", caption: "Folding Almirah" },
+  { id: "folding-almirah-04", category: "Folding Almirah", src: "/gallery/folding-almirah-04.jpg", alt: "Folding Almirah design 4", caption: "Folding Almirah" },
+  { id: "folding-almirah-05", category: "Folding Almirah", src: "/gallery/folding-almirah-05.jpg", alt: "Folding Almirah design 5", caption: "Folding Almirah" },
+
+];
+// One video for each furniture category
+export const galleryVideos = [
+  { id: "tea-table-video", category: "Tea Table", src: "/videos/tea-table.mp4", title: "Tea Table Designs" },
+  { id: "bed-video", category: "Bed", src: "/videos/bed.mp4", title: "Bed Designs" },
+  { id: "sofa-video", category: "Sofa", src: "/videos/sofa.mp4", title: "Sofa Designs" },
+  { id: "tv-wall-unit-video", category: "TV Wall Unit", src: "/videos/tv-wall-unit.mp4", title: "TV Wall Unit Designs" },
+  { id: "dressing-table-video", category: "Dressing Table with LED Mirror", src: "/videos/dressing-table.mp4", title: "Dressing Table with LED Mirror" },
+  { id: "wardrobe-video", category: "Wardrobe", src: "/videos/wardrobe.mp4", title: "Wardrobe Designs" },
+  { id: "pooja-mandir-video", category: "Pooja Mandir Cabinet", src: "/videos/pooja-mandir.mp4", title: "Pooja Mandir Cabinet" },
+  { id: "headboard-video", category: "Upholstered Bed Headboard", src: "/videos/headboard.mp4", title: "Upholstered Bed Headboard" },
+  { id: "dining-table-video", category: "dining table", src: "/videos/dining-table.mp4", title: "Dining Table Designs" },
+  { id: "almirah-video", category: "Almirah", src: "/videos/almirah.mp4", title: "Almirah Designs" },
+  { id: "folding-almirah-video", category: "Folding Almirah", src: "/videos/folding-almirah.mp4", title: "Folding Almirah Designs" },
 ];
