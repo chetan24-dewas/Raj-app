@@ -202,7 +202,7 @@ export default function AboutSection() {
               color: "var(--clay)",
             }}
           >
-            Since 2011
+            Since 1999
           </p>
 
           {/* HEADING */}

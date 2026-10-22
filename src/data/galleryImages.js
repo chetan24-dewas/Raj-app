@@ -52,8 +52,8 @@ export const galleryImages = [
   { id: "tv-wall-unit-01", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-01.jpg", alt: "TV wall unit design 1", caption: "TV Wall Unit" },
   { id: "tv-wall-unit-02", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-02.jpg", alt: "TV wall unit design 2", caption: "TV Wall Unit" },
   { id: "tv-wall-unit-03", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-03.jpg", alt: "TV wall unit design 3", caption: "TV Wall Unit" },
-  { id: "tv-wall-unit-04", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-04.jpg", alt: "TV wall unit design 4", caption: "TV Wall Unit" },
-  { id: "tv-wall-unit-05", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-05.jpg", alt: "TV wall unit design 5", caption: "TV Wall Unit" },
+  // { id: "tv-wall-unit-04", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-04.jpg", alt: "TV wall unit design 4", caption: "TV Wall Unit" },
+  // { id: "tv-wall-unit-05", category: "TV Wall Unit", src: "/gallery/tv-wall-unit-05.jpg", alt: "TV wall unit design 5", caption: "TV Wall Unit" },
 
   // Dressing Table with LED Mirror
   { id: "dressing-table-01", category: "Dressing Table with LED Mirror", src: "/gallery/dressing-table-01.jpg", alt: "Dressing table with LED mirror design 1", caption: "Dressing Table with LED Mirror" },
@@ -103,7 +103,7 @@ export const galleryImages = [
 
   // Almirah
   { id: "almirah-01", category: "Almirah", src: "/gallery/almirah-01.jpg", alt: "Almirah design 1", caption: "Almirah" },
-  { id: "almirah-02", category: "Almirah", src: "/gallery/almirah-02.jpg", alt: "Almirah design 2", caption: "Almirah" },
+  // { id: "almirah-02", category: "Almirah", src: "/gallery/almirah-02.jpg", alt: "Almirah design 2", caption: "Almirah" },
   { id: "almirah-03", category: "Almirah", src: "/gallery/almirah-03.jpg", alt: "Almirah design 3", caption: "Almirah" },
   { id: "almirah-04", category: "Almirah", src: "/gallery/almirah-04.jpg", alt: "Almirah design 4", caption: "Almirah" },
   { id: "almirah-05", category: "Almirah", src: "/gallery/almirah-05.jpg", alt: "Almirah design 5", caption: "Almirah" },
@@ -120,6 +120,10 @@ export const galleryImages = [
   { id: "folding-almirah-03", category: "Folding Almirah", src: "/gallery/folding-almirah-03.jpg", alt: "Folding Almirah design 3", caption: "Folding Almirah" },
   { id: "folding-almirah-04", category: "Folding Almirah", src: "/gallery/folding-almirah-04.jpg", alt: "Folding Almirah design 4", caption: "Folding Almirah" },
   { id: "folding-almirah-05", category: "Folding Almirah", src: "/gallery/folding-almirah-05.jpg", alt: "Folding Almirah design 5", caption: "Folding Almirah" },
+  { id: "folding-almirah-06", category: "Folding Almirah", src: "/gallery/folding-almirah-06.jpg", alt: "Folding Almirah design 6", caption: "Folding Almirah" },
+  { id: "folding-almirah-07", category: "Folding Almirah", src: "/gallery/folding-almirah-07.jpg", alt: "Folding Almirah design 7", caption: "Folding Almirah" },
+  { id: "folding-almirah-08", category: "Folding Almirah", src: "/gallery/folding-almirah-08.jpg", alt: "Folding Almirah design 8", caption: "Folding Almirah" },
+
 
 ];
 // One video for each furniture category

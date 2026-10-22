@@ -167,11 +167,11 @@ export default function Hero() {
 
           <div className="flex gap-10 mt-12 pt-8 border-t" style={{ borderColor: "rgba(251,246,238,0.22)" }}>
             <div>
-              <p className="font-display text-3xl" style={{ color: "#fbf6ee" }}>14</p>
+              <p className="font-display text-3xl" style={{ color: "#fbf6ee" }}>27</p>
               <p className="text-sm" style={{ color: "rgba(251,246,238,0.72)" }}>years in craft</p>
             </div>
             <div>
-              <p className="font-display text-3xl" style={{ color: "#fbf6ee" }}>3,200+</p>
+              <p className="font-display text-3xl" style={{ color: "#fbf6ee" }}>10,200+</p>
               <p className="text-sm" style={{ color: "rgba(251,246,238,0.72)" }}>homes furnished</p>
             </div>
             <div>
